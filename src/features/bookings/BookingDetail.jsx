@@ -3,7 +3,6 @@ import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
-// import BookingDataBox from "./BookingDataBox";
 import ButtonText from "../../ui/ButtonText";
 import Button from "../../ui/Button";
 
@@ -24,6 +23,7 @@ const HeadingGroup = styled.div`
   gap: 2.4rem;
   align-items: center;
 `;
+
 export default function BookingDetail() {
   const { isLoading, booking } = useBooking();
   const { checkout, isCheckingOut } = useCheckout();

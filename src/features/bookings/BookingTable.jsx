@@ -1,6 +1,5 @@
 import Menus from "../../ui/Menus";
 import Table from "../../ui/Table";
-// import BookingRow from "./BookingRow";
 import Empty from "../../ui/Empty";
 import { useBookings } from "./useBookings";
 import Spinner from "../../ui/Spinner";

@@ -5,6 +5,8 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import SpinnerMini from "../../ui/SpinnerMini";
 import { useSignup } from "./useSignup";
+import ButtonText from "../../ui/ButtonText";
+import { useMoveBack } from "../../hooks/useMoveBack";
 
 const FormSignUp = styled.form`
   overflow: hidden;
@@ -15,6 +17,7 @@ export default function SignupForm() {
   const { signup, isSigningUp } = useSignup();
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
+  const moveBack = useMoveBack();
 
   function onSubmit({ fullName, email, password }) {
     signup(
@@ -89,6 +92,10 @@ export default function SignupForm() {
         <Button disabled={isSigningUp}>
           {!isSigningUp ? "Create new user" : <SpinnerMini />}
         </Button>
+      </FormRow>
+
+      <FormRow>
+        <ButtonText onClick={moveBack}>&larr; Back to log in</ButtonText>
       </FormRow>
     </FormSignUp>
   );

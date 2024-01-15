@@ -21,9 +21,8 @@ const StyledToday = styled.div`
 
 const TodayList = styled.ul`
   overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
 
-  /* Removing scrollbars for webkit, firefox, and ms, respectively */
   &::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -63,42 +62,3 @@ export default function TodayActivity() {
     </StyledToday>
   );
 }
-
-const OLDdata = [
-  {
-    id: 1,
-    status: "unconfirmed",
-    guests: { fullName: "Jonas Schmedtmann" },
-    numNights: 6,
-  },
-  {
-    id: 2,
-    status: "unconfirmed",
-    guests: { fullName: "Steven Miller" },
-    numNights: 1,
-  },
-  {
-    id: 3,
-    status: "checked-in",
-    guests: { fullName: "John Smith" },
-    numNights: 3,
-  },
-  {
-    id: 4,
-    status: "unconfirmed",
-    guests: { fullName: "Marta Schmedtmann" },
-    numNights: 14,
-  },
-  {
-    id: 5,
-    status: "checked-in",
-    guests: { fullName: "Miguel Silva" },
-    numNights: 5,
-  },
-  {
-    id: 6,
-    status: "checked-in",
-    guests: { fullName: "Mary Williams" },
-    numNights: 4,
-  },
-];

@@ -1,3 +1,5 @@
+import AppLayout from "../ui/AppLayout";
+
 export default function PageNotFound() {
-  return <div>PageNotFound</div>;
+  return <AppLayout>PageNotFound</AppLayout>;
 }

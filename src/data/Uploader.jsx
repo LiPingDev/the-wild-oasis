@@ -8,13 +8,6 @@ import { bookings } from "./data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
 
-// const originalSettings = {
-//     minBookingLength: 3,
-//     maxBookingLength: 30,
-//     maxGuestsPerBooking: 10,
-//     breakfastPrice: 15,
-// };
-
 async function deleteGuests() {
   const { error } = await supabase.from("guests").delete().gt("id", 0);
   if (error) console.log(error.message);
@@ -105,12 +98,11 @@ export function Uploader() {
 
   async function uploadAll() {
     setIsLoading(true);
-    // Bookings need to be deleted first
+
     await deleteBookings();
     await deleteGuests();
     await deleteCabins();
 
-    // Bookings need to be created last
     await createGuests();
     await createCabins();
     await createBookings();

@@ -38,6 +38,13 @@ export async function getCurrentUser() {
   return data?.user;
 }
 
+export async function passwordRecovery({ email }) {
+  let { data, error } = await supabase.auth.resetPasswordForEmail(email);
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
 export async function updateCurrentUser({ password, fullName, avatar }) {
   // 1. update password or fullName
   let updateData;
